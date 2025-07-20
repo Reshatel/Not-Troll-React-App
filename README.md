@@ -1,12 +1,44 @@
-# React + Vite
+# 🧨 Not Troll React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mischievous React + Vite web experience designed to showcase CSS mastery, dramatic UI behavior, and elements that constantly attempt to troll the user — with flair and surprise.
 
-Currently, two official plugins are available:
+## ⚠️ Epilepsy Warning
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This site contains flashing visuals, high-contrast animations, and abrupt color transitions. It may pose risks for individuals with photosensitive epilepsy.
 
-## Expanding the ESLint configuration
+## 🎭 Live Demo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👉 [https://Reshatel.github.io/Not-Troll-React-App](https://Reshatel.github.io/Not-Troll-React-App)
+
+![Preview: TV](src/assets/preview.png)
+![Preview: Console Zone](src/assets/preview2.png)
+
+## 💥 Features
+
+* 🎭 **Mood-Sensitive Header**  
+  A sentient header that responds emotionally to user behavior — commenting, judging, reacting.
+
+* 🔘 **Annoying Button**  
+  A hyperactive button that dodges interaction and makes clicking a psychological game.
+
+* 📺 **VHS Television**  
+  Retro-styled display with multiple bizarre “channels” — left unexplained for dramatic effect.
+
+* 💻 **Working Terminal**  
+  A fake (but interactive) command line with random commands, Easter eggs, and chaos.
+
+* 🎁 **Hidden Oddities**  
+  Unlisted components scattered across the UI. You'll know when you meet them... or they meet you.
+
+## 🧪 Built With
+
+* [React](https://react.dev/)
+* [Vite](https://vitejs.dev/)
+* Raw CSS & glitchy animation logic
+* GitHub Pages deployment
+
+## 🚀 Setup & Local Dev
+
+```bash
+npm install
+npm run dev
