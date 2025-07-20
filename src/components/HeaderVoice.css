@@ -1,0 +1,154 @@
+.header-voice {
+  position: fixed;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: rgba(229, 136, 255, 0.85);
+  color: white;
+  font-family: monospace;
+  padding: 0.7rem 1rem;
+  z-index: 10000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 0 15px rgba(255, 64, 129, 0.4);
+  border-bottom: 3px solid black;
+  backdrop-filter: blur(4px);
+  transition: all 0.4s ease;
+}
+
+.header-voice.aggressive {
+  background-color: #2b0000;
+  color: #ff3e3e;
+  box-shadow: 0 0 30px red;
+  animation: rageShake 0.4s infinite;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@keyframes rageShake {
+  0% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(-3px) translateY(-3px); }
+  50% { transform: translateX(3px) translateY(3px); }
+  75% { transform: translateX(-3px) translateY(-3px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+.voice-message {
+  position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  color: #222;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-family: 'Segoe UI', sans-serif;
+  font-style: italic;
+  line-height: 1.4;
+   width: fit-content;
+  max-width: 70%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  transform: translateY(10px) scale(0.97);
+  animation: voiceFadeIn 0.5s ease-out forwards;
+
+  transition:
+    max-width 0.4s ease,
+    width 0.4s ease,
+    transform 0.3s ease,
+    padding 0.3s ease,
+    opacity 0.3s ease;
+}
+
+
+/* Unified animation for better smoothness */
+@keyframes voiceFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+@keyframes floatMsg {
+  0% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+
+.voice-message.aggressive {
+  background-color: #ff0000;
+  color: #fff;
+  font-style: normal;
+  box-shadow: 0 0 10px red;
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.mood-controls {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Базові властивості для всіх */
+.mood-button {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 0.85rem;
+  text-transform: lowercase;
+  padding: 0.45rem 1rem;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  color: white;
+  background: var(--mood-color, #999);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  backdrop-filter: blur(2px);
+}
+
+.mood-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
+}
+
+/* .mood-button.active {
+  outline: 2px solid white;
+  transform: scale(1.07);
+} */
+
+.mood-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.3px rgba(255, 64, 129, 0.5);
+}
+
+/* Playful — яскравий, грайливий */
+.mood-button.playful {
+  --mood-color: #ff85c1;
+}
+
+.mood-button.sarcastic {
+  --mood-color: #888888;
+}
+
+.mood-button.mysterious {
+  --mood-color: #0f2342;
+}
+
+.mood-button.aggressive {
+  --mood-color: #ff3b3b;
+}

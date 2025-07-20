@@ -1,0 +1,89 @@
+.pull-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.dark-side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: black;
+  
+  transition: width 0.15s ease-out;
+}
+
+.eyes-layer {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  font-size: 2rem;
+  color: #ff0000;
+  transition: transform 0.4s ease-in-out, opacity 0.15s ease-in-out;
+  animation: eyeGlow 2.5s infinite ease-in-out, eyeBlink 3s infinite ease-in-out;
+   cursor: grab ;
+}
+
+.eyes-layer::selection {
+background: none;
+}
+
+.grip-arrow {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  transition: transform 0.15s ease-out;
+  width: 20px;
+  height: 40px;
+  background:rgb(0, 0, 0);
+  color: white;
+  font-size: 2rem;
+  border-radius: 0 100px 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  user-select: none;
+  pointer-events: auto;
+}
+
+.grip-arrow::selection {
+  background: none;
+}
+
+
+.floating-comment {
+  position: absolute;
+  bottom: 60px;
+  left: 50px;
+  background-color: rgba(95, 0, 0, 0.9);
+  color: white;
+  padding: 12px 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  border-radius: 8px;
+  animation: fadeFloat 2s ease-in-out;
+}
+
+@keyframes fadeFloat {
+  0% { opacity: 0; transform: translateY(10px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+@keyframes eyeGlow {
+  0%, 100% { filter: drop-shadow(0 0 3px red); }
+  50%      { filter: drop-shadow(0 0 12px red); }
+}
+
+@keyframes eyeBlink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  91% { transform: scaleY(0.2); }
+  95% { transform: scaleY(1); }
+}

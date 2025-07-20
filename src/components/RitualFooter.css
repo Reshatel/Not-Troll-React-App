@@ -1,0 +1,128 @@
+/* Обгортка для футера та рук */
+.footer-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  z-index: 0;
+}
+
+/* Контейнер для рук — позаду футера */
+.hands-container-global {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Футер */
+.ritual-footer {
+  position: relative;
+  background-color: #1a1a1a;
+  color: #f2f2f2;
+  padding: 60px 40px;
+  font-family: 'Orbitron', sans-serif;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* Контент футера */
+.footer-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+/* Шар з руками */
+.hands-layer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  
+}
+
+/* Стилі всіх рук */
+.hands-img {
+  width: 100%;
+  max-width: 700px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition:
+    opacity 0.8s ease-in-out,
+    transform 1.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+/* Анімації фаз */
+.hands-img.reveal {
+  opacity: 1;
+
+  transform: translateY(0);
+    animation: riseUp 2s ease-out forwards;
+  transition:
+    transform 1.5s ease-out,
+    opacity 1.2s ease-out;
+}
+
+.hands-img.bend {
+  opacity: 1;
+  transform: translateY(-15px);
+}
+
+.hands-img.grab {
+  opacity: 1;
+  transform: translateY(-25px);
+  animation: tremble 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px crimson);
+}
+
+/* Анімація тремтіння */
+@keyframes tremble {
+  0%   { transform: translateY(-25px) rotate(0deg); }
+  25%  { transform: translateY(-23px) rotate(1deg); }
+  50%  { transform: translateY(-26px) rotate(-1deg); }
+  75%  { transform: translateY(-24px) rotate(1deg); }
+  100% { transform: translateY(-25px) rotate(0deg); }
+}
+
+/* Z-index для дублюючих шарів */
+.grab-back {
+  z-index: 1;
+}
+/* hands4 поверх усього */
+.hands4-overlay {
+  position: absolute;
+  bottom: 420px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000; /* ← гарантія, що поверх всього */
+  pointer-events: none;
+}
+.grab-front {
+  opacity: 1;
+  transform: translateY(-25px);
+  animation: tremble 1.6s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px crimson);
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  display: block;
+}
+
+@keyframes riseUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

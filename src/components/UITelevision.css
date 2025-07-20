@@ -1,0 +1,334 @@
+.tv-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* Телевізор */
+.tv-container {
+  background: radial-gradient(circle, #222, #000);
+  border: 8px double #ff4081;
+  border-radius: 30px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 700px;
+  position: relative;
+  box-shadow: 0 0 25px rgba(255, 64, 129, 0.6);
+  font-family: 'Courier New', monospace;
+}
+
+.tv-screen {
+  background: repeating-linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  border-radius: 15px;
+  color: #00ffcc;
+  font-size: 1rem;
+  height: 320px; /* 🔺 ЗБІЛЬШЕНО */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: screenFlicker 0.2s infinite alternate;
+  position: relative;
+}
+
+.tv-logo {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: monospace;
+}
+
+/* Ефект static */
+.tv-static {
+  width: 100%;
+  height: 100%;
+  background: url('https://media.giphy.com/media/oEI9uBYSzLpBK/giphy.gif') center center / cover no-repeat;
+  filter: contrast(1.4) brightness(1.2);
+  opacity: 0.8;
+}
+
+/* Пульт */
+.tv-remote {
+  margin-top: 1.5rem;
+}
+
+.remote-body {
+  background-color: #0f0f0f;
+  border: 2px solid #ff4081;
+  border-radius: 20px;
+  padding: 1rem;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 8px rgba(255, 64, 129, 0.3);
+}
+
+.remote-title {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: #ff4081;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.remote-btn {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #ff4081;
+  border-radius: 12px;
+  padding: 0.3rem 0.5rem;
+  margin: 0.2rem 0;
+  cursor: pointer;
+  width: 100%;
+  font-size: 0.75rem;
+  font-family: 'Courier New', monospace;
+  transition: background-color 0.2s ease;
+}
+
+.remote-btn:hover {
+  background-color: #ff4081;
+  color: #000;
+}
+
+.remote-btn.active {
+  background-color: #fff;
+  color: #ff4081;
+  font-weight: bold;
+}
+
+.tv-off {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.remote-power {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.power-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+  transition: background-color 0.2s ease;
+}
+
+.power-btn.off {
+  background-color: red;
+}
+
+.power-btn.on {
+  background-color: limegreen;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+.ad-now {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background: black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  display: inline-block;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  animation: pulseAd 0.8s infinite;
+}
+
+@keyframes pulseAd {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+
+.weather-channel {
+  position: relative;
+  height: 90%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-family: 'Courier New', monospace;
+  color: #fff;
+  background: linear-gradient(to top, #015871, #003344);
+  border-radius: 20px;
+  box-shadow: inset 0 0 30px rgba(0, 255, 255, 0.2);
+}
+.weather-info {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00ffee;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 95%;
+  max-width: 700px; /* ⬅️ ширший блок для тексту і графіки */
+  box-shadow: 0 0 25px rgba(0, 255, 238, 0.4);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.weather-ticker {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  background-color: #001a1a;
+  border-top: 2px solid #00ffee;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.ticker-inner {
+  white-space: nowrap;
+  display: inline-block;
+  padding-left: 100%;
+  animation: ticker 20s linear infinite;
+  font-size: 0.9rem;
+  color: #00ffee;
+  line-height: 32px;
+  font-family: 'Courier New', monospace;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+/* rumurs */
+.system-rumors {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, #0b0014, #1a001a);
+  color: #0ff0fc;
+  font-family: 'Courier New', monospace;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.rumors-glitch h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  animation: glitchText 1.5s infinite;
+}
+
+.rumors-glitch p {
+  font-size: 1.1rem;
+  animation: flicker 3s infinite alternate;
+}
+
+/* VHS overlay */
+.vhs-overlay {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.05) 3px
+  );
+  animation: staticNoise 0.2s infinite;
+  z-index: 1;
+}
+
+/* Глітч ефект */
+@keyframes glitchText {
+  0% { text-shadow: 1px 0 red, -1px 0 blue; }
+  20% { text-shadow: 2px -2px red, -2px 2px blue; }
+  40% { text-shadow: -1px 1px red, 1px -1px blue; }
+  60% { text-shadow: 1px 0 red, -1px 0 blue; }
+  100% { text-shadow: none; }
+}
+
+/* Мерехтіння */
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* "статик" шум */
+@keyframes staticNoise {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 2px; }
+}
+
+.mood-forecast {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  position: relative;
+  transition: background 1.2s ease-in-out;
+  animation: moodFloat 10s ease-in-out infinite;
+}
+
+.mood-content {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+@keyframes moodFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Застосовується до mood-forecast як і раніше */
+.mood-forecast.aggressive .mood-content {
+  animation: quake 0.15s infinite;
+  border: 2px solid red;
+  box-shadow: 0 0 15px red;
+}
+
+@keyframes quake {
+  0%   { transform: translate(0px, 0px); }
+  25%  { transform: translate(1px, -1px); }
+  50%  { transform: translate(-1px, 2px); }
+  75%  { transform: translate(2px, 0px); }
+  100% { transform: translate(0px, -2px); }
+}

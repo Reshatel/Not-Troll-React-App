@@ -1,0 +1,128 @@
+.doom-wrapper {
+  position: relative;
+  text-align: center;
+  padding: 100px 20px;
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(180deg, #0a0a0a, #111);
+  background-size: cover;
+  background-blend-mode: overlay;
+  color: #f8f8f8;
+  min-height: 100vh;
+  overflow: hidden;
+  border-top: 8px solid #700000;
+  border-bottom: 8px solid #700000;
+  z-index: 11;
+}
+
+
+/* Панель з кнопкою */
+.panel {
+  display: inline-block;
+  padding: 40px;
+  background: linear-gradient(145deg, #222, #000);
+  border: 5px solid #ff0000;
+  border-radius: 20px;
+  box-shadow: 0 0 40px red;
+}
+
+/* Кнопка */
+.doom-button {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle at center, #ff0000, #6b0000 90%);
+  border: 8px inset #a20000;
+  border-radius: 50%;
+  box-shadow:
+    0 0 25px #ff0000,
+    0 0 45px #ff3300 inset;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+  position: relative;
+}
+.doom-button:active {
+  transform: scale(0.9);
+  box-shadow:
+    0 0 30px #ff3333,
+    0 0 60px #ff5555 inset;
+}
+
+
+/* Табличка під кнопкою */
+.warning-label {
+  margin-top: 20px;
+  background: repeating-linear-gradient(
+    45deg,
+    #ffe600,
+    #ffff00 10px,
+    #000000 10px,
+    #000000 40px
+  );
+  color: #ffffff;
+  font-weight: bold;
+  padding: 12px 24px;
+  font-size: 1.4rem;
+  border: 4px double #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 0 8px #fbff00;
+}
+
+
+/* Повідомлення після активації */
+.doom-message {
+  margin-top: 60px;
+  font-size: 1.6rem;
+  color: #ff6666;
+  animation: fadeIn 1s ease-in-out;
+  background: rgba(50, 0, 0, 0.9);
+  padding: 35px;
+  border: 4px solid #990000;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #ff0000;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 5px red;
+}
+
+
+/* Миготіння на весь екран */
+.flashing::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  opacity: 0.4;
+  animation: flashRed 0.5s infinite;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@keyframes flashRed {
+  0% { opacity: 0.4; }
+  50% { opacity: 0; }
+  100% { opacity: 0.4; }
+}
+
+/* Трясіння */
+@keyframes shake {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-5px, 5px); }
+  50% { transform: translate(5px, -5px); }
+  75% { transform: translate(-5px, 5px); }
+  100% { transform: translate(0, 0); }
+}
+
+body.shake {
+  animation: shake 0.2s infinite;
+}
+
+/* fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Шрифт Orbitron (можеш додати в index.html) */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
