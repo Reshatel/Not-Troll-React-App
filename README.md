@@ -1,6 +1,7 @@
 # 🧨 Not Troll React App
 
 A mischievous React + Vite web experience designed to showcase CSS mastery, dramatic UI behavior, and elements that constantly attempt to troll the user — with flair and surprise.
+⚠️OPEN ONLY ON PC
 
 ## ⚠️ Epilepsy Warning
 
